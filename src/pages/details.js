@@ -149,7 +149,7 @@ const Details = () => {
       Authorization: `Bearer ${auth.token}`,
     };
     axios
-      .post('http://localhost:8080/addUser', data, { headers })
+      .post('https://mstc-backend.herokuapp.com/addUser', data, { headers })
       .then((response) => {
         console.log(response);
         setIsAdded(true);

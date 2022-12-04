@@ -29,8 +29,11 @@ const Login = () => {
 
   const submit = (data) => {
     console.log(data);
+    const headers = {
+      'Content-Type': 'application/json',
+    };
     axios
-      .post('http://localhost:8080/authenticate', data)
+      .post('https://mstc-backend.herokuapp.com/authenticate', data)
       .then((response) => {
         console.log(response);
         dispatch(setAuthToken(response.data));

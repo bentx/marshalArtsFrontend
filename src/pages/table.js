@@ -66,7 +66,7 @@ const TableView = () => {
     };
 
     axios
-      .get('http://localhost:8080/users/' + search, { headers })
+      .get('https://mstc-backend.herokuapp.com/users/' + search, { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);
@@ -86,7 +86,7 @@ const TableView = () => {
     };
 
     axios
-      .get('http://localhost:8080/users', { headers })
+      .get('https://mstc-backend.herokuapp.com/users', { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);
@@ -113,7 +113,7 @@ const TableView = () => {
     let del = filtereddata.filter((user) => user.id === userID);
     console.log(del[0]);
     axios
-      .delete('http://localhost:8080/user', { headers, data: del[0] })
+      .delete('https://mstc-backend.herokuapp.com/user', { headers, data: del[0] })
       .then((response) => {
         console.log(response);
       })
@@ -125,7 +125,7 @@ const TableView = () => {
     setfilteredData(filtereddata.filter((user) => user.id !== userID));
     console.log(data.filter((user) => user.id !== userID));
 
-    setData(filtereddata.filter((user) => user.id !== userID));
+    setData(data.filter((user) => user.id !== userID));
   };
   return (
     <div>
@@ -180,8 +180,8 @@ const TableView = () => {
               <TableCell>Name</TableCell>
               <TableCell align='right'>Mobile</TableCell>
               <TableCell align='right'>Yellow</TableCell>
-              <TableCell align='right'>Green</TableCell>
               {(selected === 'Karate' || selected === 'Kung Fu') && <TableCell align='right'>Orange</TableCell>}
+              <TableCell align='right'>Green</TableCell>
               {selected === 'Taekwondo' && <TableCell align='right'>Green1</TableCell>}
               <TableCell align='right'>Blue</TableCell>
               {selected === 'Kung Fu' && <TableCell align='right'>Purple</TableCell>}
@@ -206,14 +206,14 @@ const TableView = () => {
                 <TableCell style={{ color: 'yellow' }} align='right'>
                   {row.yellow ? <CheckIcon /> : <ClearIcon />}
                 </TableCell>
-                <TableCell style={{ color: 'green' }} align='right'>
-                  {row.green ? <CheckIcon /> : <ClearIcon />}
-                </TableCell>
                 {(selected === 'Karate' || selected === 'Kung Fu') && (
                   <TableCell style={{ color: 'orange' }} align='right'>
                     {row.orange ? <CheckIcon /> : <ClearIcon />}
                   </TableCell>
                 )}
+                <TableCell style={{ color: 'green' }} align='right'>
+                  {row.green ? <CheckIcon /> : <ClearIcon />}
+                </TableCell>
                 {selected === 'Taekwondo' && (
                   <TableCell style={{ color: 'green' }} align='right'>
                     {row.green1 ? <CheckIcon /> : <ClearIcon />}

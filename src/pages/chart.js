@@ -16,7 +16,7 @@ const Chart = () => {
     };
 
     axios
-      .get('http://localhost:8080/test', { headers })
+      .get('https://mstc-backend.herokuapp.com/test', { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);
@@ -42,7 +42,7 @@ const Chart = () => {
     //   });
   }, []);
   return (
-    <div style={{ margin: '20px', padding: '20px', boxShadow: '0px 0px 15px -10px rgba(0,0,0,.75)' }}>
+    <div style={{ padding: '20px', boxShadow: '0px 0px 15px -10px rgba(0,0,0,.75)' }}>
       <div>
         <h3>Active User </h3>
         <ResponsiveContainer width='100%' aspect={4 / 1}>

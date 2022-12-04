@@ -44,7 +44,7 @@ const Status = () => {
           <TimelineItem>
             {item.yellow ? (
               <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                {item.yellowdate}
+                {item.yellowdate.substring(0, 11)}
               </TimelineOppositeContent>
             ) : (
               ''
@@ -66,7 +66,7 @@ const Status = () => {
             <TimelineItem>
               {item.orange ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.orangedate}
+                  {item.orangedate.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -88,7 +88,7 @@ const Status = () => {
           <TimelineItem>
             {item.green ? (
               <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                {item.greendate}
+                {item.greendate.substring(0, 11)}
               </TimelineOppositeContent>
             ) : (
               ''
@@ -111,7 +111,7 @@ const Status = () => {
             <TimelineItem>
               {item.green1 ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.green1date}
+                  {item.green1date.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -133,7 +133,7 @@ const Status = () => {
           <TimelineItem>
             {item.blue ? (
               <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                {item.bluedate}
+                {item.bluedate.substring(0, 11)}
               </TimelineOppositeContent>
             ) : (
               ''
@@ -146,7 +146,7 @@ const Status = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant='h6' component='span'>
-                bllue Belt
+                blue Belt
               </Typography>
               <Typography>{item.blue ? 'Completed' : 'in progress ...'}</Typography>
             </TimelineContent>
@@ -155,7 +155,7 @@ const Status = () => {
             <TimelineItem>
               {item.purple ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.purpledate}
+                  {item.purpledate.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -178,7 +178,7 @@ const Status = () => {
             <TimelineItem>
               {item.blue1 ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.blue1date}
+                  {item.blue1date.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -201,7 +201,7 @@ const Status = () => {
             <TimelineItem>
               {item.red ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.reddate}
+                  {item.reddate.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -224,7 +224,7 @@ const Status = () => {
             <TimelineItem>
               {item.red1 ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.red1date}
+                  {item.red1date.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -247,7 +247,7 @@ const Status = () => {
             <TimelineItem>
               {item.maroon ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.maroondate}
+                  {item.maroondate.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -270,7 +270,7 @@ const Status = () => {
             <TimelineItem>
               {item.brown ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.browndate}
+                  {item.browndate.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -293,7 +293,7 @@ const Status = () => {
             <TimelineItem>
               {item.brownandblack ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.brownandblackdate}
+                  {item.brownandblackdate.substring(0, 11)}
                 </TimelineOppositeContent>
               ) : (
                 ''
@@ -316,7 +316,7 @@ const Status = () => {
           <TimelineItem>
             {item.black ? (
               <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                {item.blackdate}
+                {item.blackdate.substring(0, 11)}
               </TimelineOppositeContent>
             ) : (
               ''

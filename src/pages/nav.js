@@ -24,28 +24,30 @@ const Nav = () => {
             <img src={shailesh} style={{ width: '80px', height: '60px' }} />
           </div>
         </div>
-        <div onClick={() => handleNavigation()} className={` ${mobNavstyle} mobile-nav`}>
-          <MenuIcon />
-        </div>
-        <nav>
-          <ul data-vi className={`${mobNavstyle} primaryNavigiation flex`} style={{ display: 'flex' }}>
-            <li>
-              <a style={{ textDecoration: 'none', color: 'black' }} href='/'>
-                <span className='numeric'>00</span>Admin
-              </a>
-            </li>
-            <li>
-              <a style={{ textDecoration: 'none', color: 'black' }} href='/student'>
-                <span className='numeric'>01</span>Student
-              </a>
-            </li>
-            {/* <li>
+        <div>
+          <div onClick={() => handleNavigation()} className={` ${mobNavstyle} mobile-nav`}>
+            <MenuIcon />
+          </div>
+          <nav>
+            <ul data-vi className={`${mobNavstyle} primaryNavigiation flex`} style={{ display: 'flex' }}>
+              <li>
+                <a style={{ textDecoration: 'none', color: 'black' }} href='/'>
+                  <span className='numeric'>00</span>Admin
+                </a>
+              </li>
+              <li>
+                <a style={{ textDecoration: 'none', color: 'black' }} href='/student'>
+                  <span className='numeric'>01</span>Student
+                </a>
+              </li>
+              {/* <li>
               <a style={{ textDecoration: 'none', color: 'black' }} href='/'>
                 <span className='numeric'>00</span>Home
               </a>
             </li> */}
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   );

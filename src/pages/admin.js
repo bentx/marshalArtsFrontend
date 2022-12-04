@@ -39,7 +39,7 @@ const Admin = () => {
               justifyContent: 'center',
               flexDirection: 'column',
               width: '100%',
-              margin: '20px',
+              margin: '10px',
             }}>
             <Card sx={{ minWidth: 275, margin: '4px', backgroundColor: '#8338ec' }}>
               <div style={{ textAlign: 'center', width: '100%' }}>
@@ -59,7 +59,7 @@ const Admin = () => {
           <Chart />
         </Grid>
       </Grid>
-      <div style={{ margin: '20px', padding: '20px' }}>
+      <div>
         {/* <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
             <Button onClick={createuser} style={{ margin: '10px', backgroundColor: '#8338ec' }} variant='contained'>

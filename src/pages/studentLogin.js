@@ -25,12 +25,13 @@ const StudentLogin = () => {
 
   const submit = (data) => {
     axios
-      .get(`http://localhost:8080/result/${data.password}`)
+      .get(`https://mstc-backend.herokuapp.com/result/${data.password}`)
       .then((response) => {
         console.log(response);
         dispatch(setMobNo(response.data));
         navigate('/status');
       })
+
       .catch((error) => {
         console.log(error);
       });
@@ -38,9 +39,6 @@ const StudentLogin = () => {
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item md={8} xs={12} sm={12}>
-          <img style={{ height: '100vh', width: '100%' }} src={login} />
-        </Grid>
         <Grid item xs={12} md={4} sm={12}>
           <form onSubmit={handleSubmit(submit)}>
             <div
@@ -69,6 +67,9 @@ const StudentLogin = () => {
               </Button>
             </div>
           </form>
+        </Grid>
+        <Grid style={{ height: '100vh' }} item md={8} xs={12} sm={12}>
+          <img style={{ width: '100%' }} src={login} />
         </Grid>
       </Grid>
     </>
