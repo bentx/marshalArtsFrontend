@@ -16,7 +16,7 @@ const Chart = () => {
     };
 
     axios
-      .get('https://mstc-backend.herokuapp.com/test', { headers })
+      .get('https://marshalartsbackend-production.up.railway.app/test', { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);

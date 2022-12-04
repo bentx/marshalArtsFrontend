@@ -66,7 +66,7 @@ const TableView = () => {
     };
 
     axios
-      .get('https://mstc-backend.herokuapp.com/users/' + search, { headers })
+      .get('https://marshalartsbackend-production.up.railway.app/users/' + search, { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);
@@ -86,7 +86,7 @@ const TableView = () => {
     };
 
     axios
-      .get('https://mstc-backend.herokuapp.com/users', { headers })
+      .get('https://marshalartsbackend-production.up.railway.app/users', { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);
@@ -113,7 +113,7 @@ const TableView = () => {
     let del = filtereddata.filter((user) => user.id === userID);
     console.log(del[0]);
     axios
-      .delete('https://mstc-backend.herokuapp.com/user', { headers, data: del[0] })
+      .delete('https://marshalartsbackend-production.up.railway.app/user', { headers, data: del[0] })
       .then((response) => {
         console.log(response);
       })

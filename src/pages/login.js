@@ -33,7 +33,7 @@ const Login = () => {
       'Content-Type': 'application/json',
     };
     axios
-      .post('https://mstc-backend.herokuapp.com/authenticate', data)
+      .post('https://marshalartsbackend-production.up.railway.app/authenticate', data)
       .then((response) => {
         console.log(response);
         dispatch(setAuthToken(response.data));

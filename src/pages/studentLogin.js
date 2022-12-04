@@ -25,7 +25,7 @@ const StudentLogin = () => {
 
   const submit = (data) => {
     axios
-      .get(`https://mstc-backend.herokuapp.com/result/${data.password}`)
+      .get(`https://marshalartsbackend-production.up.railway.app/result/${data.password}`)
       .then((response) => {
         console.log(response);
         dispatch(setMobNo(response.data));

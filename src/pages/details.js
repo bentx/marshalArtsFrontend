@@ -149,7 +149,7 @@ const Details = () => {
       Authorization: `Bearer ${auth.token}`,
     };
     axios
-      .post('https://mstc-backend.herokuapp.com/addUser', data, { headers })
+      .post('https://marshalartsbackend-production.up.railway.app/addUser', data, { headers })
       .then((response) => {
         console.log(response);
         setIsAdded(true);
