@@ -38,7 +38,26 @@ const Details = () => {
   const taekcolors = ['yellow', 'green', 'green1', 'blue', 'blue1', 'red', 'red1', 'black'];
   const karatecolors = ['yellow', 'orange', 'green', 'blue', 'maroon', 'brown', 'brownandblack', 'black'];
   const kungfucolors = ['yellow', 'orange', 'green', 'blue', 'purple', 'red', 'brown', 'black'];
-
+  const buddham = [
+    'white',
+    'yellow',
+    'yellow1',
+    'yellow2',
+    'blue',
+    'blue1',
+    'blue2',
+    'black',
+    'blackBeltDan1',
+    'blackBeltDan12',
+    'blackBeltDan3',
+    'blackBeltDan4',
+    'blackBeltDan5',
+    'blackBeltDan6',
+    'blackBeltDan7',
+    'blackBeltDan8',
+    'blackBeltDan9',
+    'blackBeltDan10',
+  ];
   const [green, setGreen] = useState(false);
   const navigate = useNavigate();
   const [searchparam, setSearchParam] = useSearchParams();
@@ -54,10 +73,14 @@ const Details = () => {
         console.log('selected Taekwondo  ');
 
         setcolors(taekcolors);
-      } else {
+      } else if (data.type === 'Kung Fu') {
         console.log('selected Kung Fu  ');
 
         setcolors(kungfucolors);
+      } else {
+        console.log('selected Buddham');
+
+        setcolors(buddham);
       }
       setValue('name', data.name);
       setValue('mobile', data.mobile);
@@ -75,6 +98,20 @@ const Details = () => {
       setValue('brownandblack', data.brownandblack);
       setValue('black', data.black);
       setValue('type', data.type);
+      setValue('white', data.white);
+      setValue('yellow1', data.yellow1);
+      setValue('yellow2', data.yellow2);
+      setValue('blue2', data.blue2);
+      setValue('blackBeltDan1', data.blackBeltDan1);
+      setValue('blackBeltDan2', data.blackBeltDan2);
+      setValue('blackBeltDan3', data.blackBeltDan3);
+      setValue('blackBeltDan4', data.blackBeltDan4);
+      setValue('blackBeltDan5', data.blackBeltDan5);
+      setValue('blackBeltDan6', data.blackBeltDan6);
+      setValue('blackBeltDan7', data.blackBeltDan7);
+      setValue('blackBeltDan8', data.blackBeltDan8);
+      setValue('blackBeltDan9', data.blackBeltDan9);
+      setValue('blackBeltDan10', data.blackBeltDan10);
 
       if (data.yellow) {
         setValue('yellowdate', data.yellowdate.slice(0, 10));
@@ -114,6 +151,50 @@ const Details = () => {
       }
       if (data.black) {
         setValue('blackdate', data.blackdate.slice(0, 10));
+      }
+      if (data.whitedate) {
+        setValue('whitedate', data.blackdate.slice(0, 10));
+      }
+      if (data.yellow1date) {
+        setValue('yellow1date', data.yellow1date.slice(0, 10));
+      }
+      if (data.yellow2date) {
+        setValue('yellow2date', data.yellow2date.slice(0, 10));
+      }
+      if (data.blue2date) {
+        setValue('blue2date', data.blue2date.slice(0, 10));
+      }
+      if (data.blackBeltdan1date) {
+        setValue('blackBeltdan1date', data.blackBeltdan1date.slice(0, 10));
+      }
+      if (data.blackBeltdan2date) {
+        setValue('blackBeltdan2date', data.blackBeltdan2date.slice(0, 10));
+      }
+      if (data.blackBeltdan3date) {
+        setValue('blackBeltdan3date', data.blackBeltdan3date.slice(0, 10));
+      }
+      if (data.blackBeltdan4date) {
+        setValue('blackBeltdan4date', data.blackBeltdan4date.slice(0, 10));
+      }
+      if (data.blackBeltdan5date) {
+        setValue('blackBeltdan5date', data.blackBeltdan5date.slice(0, 10));
+      }
+
+      if (data.blackBeltdan6date) {
+        setValue('blackBeltdan6date', data.blackBeltdan6date.slice(0, 10));
+      }
+      if (data.blackBeltdan7date) {
+        setValue('blackBeltdan7date', data.blackBeltdan7date.slice(0, 10));
+      }
+
+      if (data.blackBeltdan8date) {
+        setValue('blackBeltdan8date', data.blackBeltdan8date.slice(0, 10));
+      }
+      if (data.blackBeltdae9date) {
+        setValue('blackBeltdae9date', data.blackBeltdae9date.slice(0, 10));
+      }
+      if (data.blackBeltdae10date) {
+        setValue('blackBeltdae10date', data.blackBeltdae10date.slice(0, 10));
       }
 
       // if (data.black) {
@@ -244,10 +325,12 @@ const Details = () => {
                       console.log('selected Taekwondo  ');
 
                       setcolors(taekcolors);
-                    } else {
+                    } else if (getValues('type') === 'Kung Fu') {
                       console.log('selected Kung Fu  ');
 
                       setcolors(kungfucolors);
+                    } else {
+                      setcolors(buddham);
                     }
                     console.log('e');
 
@@ -257,6 +340,7 @@ const Details = () => {
                 <option value='Kung Fu'>Kung Fu</option>
                 <option value='Karate'>Karate</option>
                 <option value='Taekwondo'>Taekwondo</option>
+                <option value='buddham'>buddham</option>
               </select>
             </div>
             {/* <div style={{ fontWeight: 'bold', margin: '10px', display: 'flex', justifyContent: 'space-between' }}>

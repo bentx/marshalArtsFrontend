@@ -50,6 +50,7 @@ const StudentLogin = () => {
                 marginTop: '100px',
                 flexDirection: 'column',
               }}>
+              <h2>Welcome to Buddham World</h2>
               <div style={{ marginTop: '10px', fontWeight: 'bold' }}>
                 <label>MobileNumber</label>
               </div>
@@ -57,7 +58,7 @@ const StudentLogin = () => {
                 <input
                   style={{ padding: '10px', width: '200px' }}
                   type='text'
-                  placeholder='First name'
+                  placeholder='Number'
                   {...register('password', { required: true })}
                 />
               </div>

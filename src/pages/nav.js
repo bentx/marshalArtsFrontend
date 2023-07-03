@@ -17,11 +17,11 @@ const Nav = () => {
     console.log(mobNav);
   };
   return (
-    <div style={{ backgroundColor: 'white' }}>
+    <div>
       <div className='primaryHeader'>
         <div className='logo'>
           <div style={{ display: 'flex' }}>
-            <img src={shailesh} style={{ width: '80px', height: '60px' }} />
+            <img src={shailesh} style={{ width: '160px', height: '110px' }} />
           </div>
         </div>
         <div>

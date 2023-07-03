@@ -171,6 +171,7 @@ const TableView = () => {
           <option value='Kung Fu'>Kung Fu</option>
           <option value='Karate'>karate</option>
           <option value='Taekwondo'>Taekwondo</option>
+          <option value='buddham'>buddham</option>
         </select>
       </label>
       <TableContainer component={Paper}>
@@ -179,11 +180,16 @@ const TableView = () => {
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell align='right'>Mobile</TableCell>
+              {selected === 'buddham' && <TableCell align='right'>White</TableCell>}
               <TableCell align='right'>Yellow</TableCell>
+              {selected === 'buddham' && <TableCell align='right'>yellow1</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>yellow2</TableCell>}
               {(selected === 'Karate' || selected === 'Kung Fu') && <TableCell align='right'>Orange</TableCell>}
-              <TableCell align='right'>Green</TableCell>
+              {selected != 'buddham' && <TableCell align='right'>Green</TableCell>}
               {selected === 'Taekwondo' && <TableCell align='right'>Green1</TableCell>}
               <TableCell align='right'>Blue</TableCell>
+              {selected === 'buddham' && <TableCell align='right'>blue1</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>blue2</TableCell>}
               {selected === 'Kung Fu' && <TableCell align='right'>Purple</TableCell>}
               {selected === 'Taekwondo' && <TableCell align='right'>Blue1</TableCell>}
               {(selected === 'Taekwondo' || selected === 'Kung Fu') && <TableCell align='right'>Red</TableCell>}
@@ -192,6 +198,16 @@ const TableView = () => {
               {(selected === 'Karate' || selected === 'Kung Fu') && <TableCell align='right'>Brown</TableCell>}
               {selected === 'Karate' && <TableCell align='right'>BlackandBrown</TableCell>}
               <TableCell align='right'>Black</TableCell>
+              {selected === 'buddham' && <TableCell align='right'>BBD1</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD2</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD3</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD4</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD5</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD6</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD7</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD8</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD9</TableCell>}
+              {selected === 'buddham' && <TableCell align='right'>BBD10</TableCell>}
               <TableCell align='right'>Edit</TableCell>
               <TableCell align='right'>Delete</TableCell>
             </TableRow>
@@ -203,17 +219,34 @@ const TableView = () => {
                   {row.name}
                 </TableCell>
                 <TableCell align='right'>{row.mobile}</TableCell>
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'gray' }} align='right'>
+                    {row.white ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
                 <TableCell style={{ color: 'yellow' }} align='right'>
                   {row.yellow ? <CheckIcon /> : <ClearIcon />}
                 </TableCell>
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'yellow' }} align='right'>
+                    {row.yellow1 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'yellow' }} align='right'>
+                    {row.yellow2 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
                 {(selected === 'Karate' || selected === 'Kung Fu') && (
                   <TableCell style={{ color: 'orange' }} align='right'>
                     {row.orange ? <CheckIcon /> : <ClearIcon />}
                   </TableCell>
                 )}
-                <TableCell style={{ color: 'green' }} align='right'>
-                  {row.green ? <CheckIcon /> : <ClearIcon />}
-                </TableCell>
+                {selected != 'buddham' && (
+                  <TableCell style={{ color: 'green' }} align='right'>
+                    {row.green ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
                 {selected === 'Taekwondo' && (
                   <TableCell style={{ color: 'green' }} align='right'>
                     {row.green1 ? <CheckIcon /> : <ClearIcon />}
@@ -222,6 +255,16 @@ const TableView = () => {
                 <TableCell style={{ color: 'blue' }} align='right'>
                   {row.blue ? <CheckIcon /> : <ClearIcon />}
                 </TableCell>
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'blue' }} align='right'>
+                    {row.blue1 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'blue' }} align='right'>
+                    {row.blue2 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
                 {selected === 'Kung Fu' && (
                   <TableCell style={{ color: 'purple' }} align='right'>
                     {row.purple ? <CheckIcon /> : <ClearIcon />}
@@ -259,6 +302,57 @@ const TableView = () => {
                 )}
 
                 <TableCell align='right'>{row.black ? <CheckIcon /> : <ClearIcon />}</TableCell>
+
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan1 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan2 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan3 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan4 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan5 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan6 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan7 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan8 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan9 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
+                {selected === 'buddham' && (
+                  <TableCell style={{ color: 'black' }} align='right'>
+                    {row.blackBeltdan10 ? <CheckIcon /> : <ClearIcon />}
+                  </TableCell>
+                )}
                 <TableCell onClick={() => editUser(filtereddata[index])} align='right'>
                   {<EditIcon />}
                 </TableCell>
