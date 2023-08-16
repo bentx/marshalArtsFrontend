@@ -1,11 +1,13 @@
 import { SET_AUTH } from '../action';
 import { SET_MobNo } from '../action';
 import { SET_User } from '../action';
+import { SET_Master } from '../action';
 
 const initMovieState = {
   auth: {},
   mobNo: '',
   data: {},
+  masterDetails: [],
 };
 
 export default (state = initMovieState, action) => {
@@ -68,6 +70,11 @@ export default (state = initMovieState, action) => {
       return {
         ...state,
         data: action.payload,
+      };
+    case SET_Master:
+      return {
+        ...state,
+        masterDetails: action.payload,
       };
 
     default:

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -7,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { setAuthToken } from '../redux/action';
 
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
@@ -18,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const navigate = useNavigate();
   const data = useSelector((state) => state);
+  const [isSubmit, setSubmit] = useState(false);
   const dispatch = useDispatch();
   console.log(data);
   const {
@@ -29,17 +32,19 @@ const Login = () => {
 
   const submit = (data) => {
     console.log(data);
+    setSubmit(true);
     const headers = {
       'Content-Type': 'application/json',
     };
     axios
-      .post('https://marshalartsbackend-production.up.railway.app/authenticate', data)
+      .post('https://5nauwalfbc.execute-api.ap-south-1.amazonaws.com/dev/token', data)
       .then((response) => {
         console.log(response);
         dispatch(setAuthToken(response.data));
         navigate('/admin');
       })
       .catch((error) => {
+        setSubmit(false);
         console.log(error);
       });
   };
@@ -82,9 +87,16 @@ const Login = () => {
 
                 {errors.password && <span style={{ fontSize: '.7rem', color: 'red' }}>*This field is required</span>}
               </div>
-              <Button style={{ marginTop: '10px', backgroundColor: '#8338ec' }} type='submit' variant='contained'>
-                Login
-              </Button>
+              {isSubmit && (
+                <div style={{ marginTop: '10px' }} className='spinner-container'>
+                  <div className='loading-spinner'></div>
+                </div>
+              )}
+              {!isSubmit && (
+                <Button style={{ marginTop: '10px', backgroundColor: '#8338ec' }} type='submit' variant='contained'>
+                  Login
+                </Button>
+              )}
             </div>
           </Grid>
           <Grid item md={8} xs={12} sm={12}>

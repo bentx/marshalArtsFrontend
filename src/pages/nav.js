@@ -40,6 +40,11 @@ const Nav = () => {
                   <span className='numeric'>01</span>Student
                 </a>
               </li>
+              <li>
+                <a style={{ textDecoration: 'none', color: 'black' }} href='/master'>
+                  <span className='numeric'>02</span>Master
+                </a>
+              </li>
               {/* <li>
               <a style={{ textDecoration: 'none', color: 'black' }} href='/'>
                 <span className='numeric'>00</span>Home

@@ -39,7 +39,6 @@ const Details = () => {
   const karatecolors = ['yellow', 'orange', 'green', 'blue', 'maroon', 'brown', 'brownandblack', 'black'];
   const kungfucolors = ['yellow', 'orange', 'green', 'blue', 'purple', 'red', 'brown', 'black'];
   const buddham = [
-    'white',
     'yellow',
     'yellow1',
     'yellow2',
@@ -48,7 +47,7 @@ const Details = () => {
     'blue2',
     'black',
     'blackBeltDan1',
-    'blackBeltDan12',
+    'blackBeltDan2',
     'blackBeltDan3',
     'blackBeltDan4',
     'blackBeltDan5',
@@ -58,6 +57,25 @@ const Details = () => {
     'blackBeltDan9',
     'blackBeltDan10',
   ];
+  const buddhamMap = {
+    yellow: 'Yellow1 Belt',
+    yellow1: 'Yellow2 Belt',
+    yellow2: 'Yellow3 Belt',
+    blue: 'Blue1 Belt',
+    blue1: 'Blue2 Belt',
+    blue2: 'Blue3 Belt',
+    black: 'Black Belt',
+    blackBeltDan1: 'Black Belt Dan 1',
+    blackBeltDan2: 'Black Belt Dan 2',
+    blackBeltDan3: 'Black Belt Dan 3',
+    blackBeltDan4: 'Black Belt Dan 4',
+    blackBeltDan5: 'Black Belt Dan 5',
+    blackBeltDan6: 'Black Belt Dan 6',
+    blackBeltDan7: 'Black Belt Dan 7',
+    blackBeltDan8: 'Black Belt Dan 8',
+    blackBeltDan9: 'Black Belt Dan 9',
+    blackBeltDan10: 'Black Belt Dan 10',
+  };
   const [green, setGreen] = useState(false);
   const navigate = useNavigate();
   const [searchparam, setSearchParam] = useSearchParams();
@@ -98,7 +116,6 @@ const Details = () => {
       setValue('brownandblack', data.brownandblack);
       setValue('black', data.black);
       setValue('type', data.type);
-      setValue('white', data.white);
       setValue('yellow1', data.yellow1);
       setValue('yellow2', data.yellow2);
       setValue('blue2', data.blue2);
@@ -151,9 +168,6 @@ const Details = () => {
       }
       if (data.black) {
         setValue('blackdate', data.blackdate.slice(0, 10));
-      }
-      if (data.whitedate) {
-        setValue('whitedate', data.blackdate.slice(0, 10));
       }
       if (data.yellow1date) {
         setValue('yellow1date', data.yellow1date.slice(0, 10));
@@ -227,10 +241,10 @@ const Details = () => {
   const submit = (data) => {
     console.log(data);
     const headers = {
-      Authorization: `Bearer ${auth.token}`,
+      Authorization: `Bearer ${auth}`,
     };
     axios
-      .post('https://marshalartsbackend-production.up.railway.app/addUser', data, { headers })
+      .post('https://5nauwalfbc.execute-api.ap-south-1.amazonaws.com/dev/addUser/lambda', data, { headers })
       .then((response) => {
         console.log(response);
         setIsAdded(true);
@@ -250,7 +264,12 @@ const Details = () => {
     navigate('/admin');
   };
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100vh' }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+      }}>
       <img
         style={{
           height: '100vh',
@@ -340,7 +359,7 @@ const Details = () => {
                 <option value='Kung Fu'>Kung Fu</option>
                 <option value='Karate'>Karate</option>
                 <option value='Taekwondo'>Taekwondo</option>
-                <option value='buddham'>buddham</option>
+                <option value='buddham'>Buddham</option>
               </select>
             </div>
             {/* <div style={{ fontWeight: 'bold', margin: '10px', display: 'flex', justifyContent: 'space-between' }}>
@@ -360,7 +379,7 @@ const Details = () => {
               />
             </div> */}
             <div style={{ fontWeight: 'bold', margin: '10px', display: 'flex', justifyContent: 'space-between' }}>
-              <label>Mobile</label>
+              <label>Code</label>
               <input
                 style={{
                   padding: '10px',
@@ -371,7 +390,7 @@ const Details = () => {
                   border: 'none',
                 }}
                 type='text'
-                placeholder='First name'
+                placeholder='code'
                 {...register('mobile', { required: true })}
               />
             </div>
@@ -451,7 +470,7 @@ const Details = () => {
               <div key={color}>
                 <div style={{ fontWeight: 'bold' }}>
                   <Checkbox checked={watch(color) === true} color='success' {...register(color)} />
-                  <label>{color} Belt</label>
+                  {getValues('type') === 'buddham' ? <label>{buddhamMap[color]} </label> : <label>{color} Belt</label>}
                 </div>
                 {watch(color) && (
                   <div>
@@ -484,7 +503,13 @@ const Details = () => {
         </div>
       )}
       {isAdded && (
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+          }}>
           <Button
             onClick={() => setIsAdded(false)}
             style={{ marginTop: '10px', backgroundColor: '#8338ec' }}

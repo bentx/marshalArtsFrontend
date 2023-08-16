@@ -12,11 +12,11 @@ const Chart = () => {
 
   useEffect(() => {
     const headers = {
-      Authorization: `Bearer ${auth.token}`,
+      Authorization: `Bearer ${auth}`,
     };
 
     axios
-      .get('https://marshalartsbackend-production.up.railway.app/test', { headers })
+      .post('https://5nauwalfbc.execute-api.ap-south-1.amazonaws.com/dev/activeUser/lambda', 'data', { headers })
       .then((response) => {
         console.log(response);
         setData(response.data);

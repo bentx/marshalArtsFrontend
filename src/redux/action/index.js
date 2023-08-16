@@ -8,6 +8,7 @@ export const SET_GENRES = 'SET_GENRES';
 export const SET_User = 'SET_User';
 export const SET_MobNo = 'SET_MobNo';
 export const SET_AUTH = 'SET_AUTH';
+export const SET_Master = 'SET_Master';
 
 // export const fetchMovieData = (params) => async (dispath) => {
 //   if (params.length === 1) {
@@ -103,6 +104,13 @@ export const setMobNo = (data) => {
 export const setUser = (data) => {
   return {
     type: SET_User,
+    payload: data,
+  };
+};
+
+export const setMaster = (data) => {
+  return {
+    type: SET_Master,
     payload: data,
   };
 };

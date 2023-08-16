@@ -41,29 +41,6 @@ const Status = () => {
           <h3 style={{ textAlign: 'center' }}>{item.name}</h3>
           <h4 style={{ textAlign: 'center', marginTop: '-10px' }}>{item.type}</h4>
           {}
-          {item.type === 'buddham' && (
-            <TimelineItem>
-              {item.white ? (
-                <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
-                  {item.whitedate.substring(0, 11)}
-                </TimelineOppositeContent>
-              ) : (
-                ''
-              )}
-              <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot style={{ background: 'gray' }} />
-
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant='h6' component='span'>
-                  white Belt
-                </Typography>
-                <Typography>{item.white ? 'Completed' : 'in progress ...'}</Typography>
-              </TimelineContent>
-            </TimelineItem>
-          )}
           <TimelineItem>
             {item.yellow ? (
               <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
@@ -80,7 +57,7 @@ const Status = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant='h6' component='span'>
-                yellow Belt
+                {item.type === 'buddham' ? 'yellow1 Belt' : 'yellow Belt'}
               </Typography>
               <Typography>{item.yellow ? 'Completed' : 'in progress ...'}</Typography>
             </TimelineContent>
@@ -102,7 +79,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  yellow1 Belt
+                  yellow2 Belt
                 </Typography>
                 <Typography>{item.yellow ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -125,7 +102,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  yellow2 Belt
+                  yellow3 Belt
                 </Typography>
                 <Typography>{item.yellow2 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -154,7 +131,7 @@ const Status = () => {
               </TimelineContent>
             </TimelineItem>
           )}
-          {item.type === 'buddham' && (
+          {item.type != 'buddham' && (
             <TimelineItem>
               {item.green ? (
                 <TimelineOppositeContent sx={{ m: 'auto 0' }} align='right' variant='body2' color='text.secondary'>
@@ -216,7 +193,7 @@ const Status = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant='h6' component='span'>
-                blue Belt
+                {item.type === 'buddham' ? 'blue1' : 'blue Belt'}
               </Typography>
               <Typography>{item.blue ? 'Completed' : 'in progress ...'}</Typography>
             </TimelineContent>
@@ -238,7 +215,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blue1 Belt
+                  blue2 Belt
                 </Typography>
                 <Typography>{item.blue1 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -261,7 +238,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blue2 Belt
+                  blue3 Belt
                 </Typography>
                 <Typography>{item.blue2 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -468,7 +445,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan1 Belt
+                  black belt dan1
                 </Typography>
                 <Typography>{item.blackBeltdan1 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -491,7 +468,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan2 Belt
+                  black belt dan2
                 </Typography>
                 <Typography>{item.blackBeltdan2 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -515,7 +492,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan3 Belt
+                  black belt dan3
                 </Typography>
                 <Typography>{item.blackBeltdan3 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -538,7 +515,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan4 Belt
+                  black belt dan4
                 </Typography>
                 <Typography>{item.blackBeltdan4 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -561,7 +538,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan5 Belt
+                  black belt dan5
                 </Typography>
                 <Typography>{item.blackBeltdan5 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -584,7 +561,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan6 Belt
+                  black belt dan6
                 </Typography>
                 <Typography>{item.blackBeltdan6 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -607,7 +584,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan7 Belt
+                  black belt dan7
                 </Typography>
                 <Typography>{item.blackBeltdan7 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -630,7 +607,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan8 Belt
+                  black belt dan8
                 </Typography>
                 <Typography>{item.blackBeltdan8 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -654,7 +631,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan9 Belt
+                  black belt dan9
                 </Typography>
                 <Typography>{item.blackBeltdan9 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>
@@ -677,7 +654,7 @@ const Status = () => {
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant='h6' component='span'>
-                  blackBeltdan10 Belt
+                  black belt dan10
                 </Typography>
                 <Typography>{item.blackBeltdan10 ? 'Completed' : 'in progress ...'}</Typography>
               </TimelineContent>

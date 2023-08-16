@@ -2,9 +2,9 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Col, Container, Row } from 'react-bootstrap';
-import login from '../assets/login.svg';
+import login from '../assets/masterlogin.svg';
 import Grid from '@mui/material/Grid';
-import { setMobNo } from '../redux/action';
+import { setMaster } from '../redux/action';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import axios from 'axios';
 import './login.css';
@@ -14,7 +14,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 
-const StudentLogin = () => {
+const MasterStatusDetails = () => {
   const {
     register,
     handleSubmit,
@@ -27,12 +27,12 @@ const StudentLogin = () => {
   const submit = (data) => {
     setSubmit(true);
     axios
-      .get(`https://5nauwalfbc.execute-api.ap-south-1.amazonaws.com/dev/result/${data.password}`)
+      .get(`https://5nauwalfbc.execute-api.ap-south-1.amazonaws.com/dev/mastermob/${data.password}`)
       .then((response) => {
         console.log(response);
-        dispatch(setMobNo(response.data));
+        dispatch(setMaster(response.data));
         setSubmit(false);
-        navigate('/status');
+        navigate('/masterStatus');
       })
 
       .catch((error) => {
@@ -85,4 +85,4 @@ const StudentLogin = () => {
   );
 };
 
-export default StudentLogin;
+export default MasterStatusDetails;
